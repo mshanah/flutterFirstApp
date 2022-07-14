@@ -110,8 +110,10 @@ class _MainAppState extends State<MainApp> {
           final configuration =
               await OpenIdConnect.getConfiguration(discoveryUrl);
           if (kIsWeb) {
+            /// Working Web with
             weblogin(context, configuration, googleClientId, callbackUrlScheme);
           } else {
+            // working desktop
             desktopLogin(configuration, googleClientId, callbackUrlScheme);
           }
         },
